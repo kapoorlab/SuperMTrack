@@ -27,6 +27,8 @@ import net.imglib2.IterableInterval;
 import net.imglib2.RandomAccess;
 import net.imglib2.RandomAccessible;
 import net.imglib2.RandomAccessibleInterval;
+import net.imglib2.type.NativeType;
+import net.imglib2.type.numeric.RealType;
 import net.imglib2.type.numeric.integer.IntType;
 import net.imglib2.type.numeric.real.FloatType;
 import net.imglib2.view.Views;
@@ -34,7 +36,7 @@ import net.imglib2.view.Views;
 public class AddGaussian {
 	
 	
-	final public static void addGaussian( final RandomAccessibleInterval< FloatType > image, final double[] location, final double[] sigma)
+	final public static<T extends RealType<T> & NativeType<T>>  void addGaussian( final RandomAccessibleInterval< FloatType > image, final double[] location, final double[] sigma)
 	{
 	final int numDimensions = image.numDimensions();
 	final int[] size = new int[ numDimensions ];

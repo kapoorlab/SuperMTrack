@@ -42,7 +42,7 @@ public class GaussianMaskFitMSER {
 	public static double[] sumofgaussianMaskFit(final RandomAccessibleInterval<FloatType> signalInterval,
 			final double[] location, final double[] sigma, final int numgaussians,
 			final int iterations, final double[] dxvector, final double slope, final double intercept,
-			final double maxintensityline,  final boolean halfgaussian, final EndfitMSER startorend, int label, double noiselevel, double R)
+			final double maxintensityline,  final boolean halfgaussian, final EndfitMSER startorend, int label, double R)
 			throws Exception {
 		final int n = signalInterval.numDimensions();
 
@@ -82,12 +82,12 @@ public class GaussianMaskFitMSER {
 			switch (startorend) {
 
 			case StartfitMSER:
-				beststartfitsumofGaussian(translatedIterableMask,  newlocation, numgaussians, sigma, dxvector, slope, intercept, maxintensityline, noiselevel,
+				beststartfitsumofGaussian(translatedIterableMask,  newlocation, numgaussians, sigma, dxvector, slope, intercept, maxintensityline,
 						halfgaussian);
 				break;
 
 			case EndfitMSER:
-				bestendfitsumofGaussian(translatedIterableMask, newlocation, numgaussians, sigma, dxvector, slope, intercept, maxintensityline, noiselevel,
+				bestendfitsumofGaussian(translatedIterableMask, newlocation, numgaussians, sigma, dxvector, slope, intercept, maxintensityline,
 						halfgaussian);
 				break;
 
@@ -188,7 +188,7 @@ public class GaussianMaskFitMSER {
 	final public static void beststartfitsumofGaussian(final IterableInterval<FloatType> image, final double[] location,
 			final int numgaussians,
 			final double[] sigma, final double[] dxvector, final double slope, final double intercept, final double maxintensityline,
-			final double noiselevel,
+			
 			boolean halfgaussian) {
 		final int ndims = image.numDimensions();
 		
@@ -222,7 +222,7 @@ public class GaussianMaskFitMSER {
 	final public static void bestendfitsumofGaussian(final IterableInterval<FloatType> image,  final double[] location,
 			final int numgaussians,
 			final double[] sigma, final double[] dxvector, final double slope, final double intercept, final double maxintensityline,
-			final double noiselevel,
+			
 			 boolean halfgaussian) {
 		final int ndims = image.numDimensions();
 		
