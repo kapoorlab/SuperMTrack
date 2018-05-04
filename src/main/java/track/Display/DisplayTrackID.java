@@ -13,6 +13,15 @@ import net.imglib2.view.IntervalView;
 
 public class DisplayTrackID {
 
+	/**
+	 * 
+	 * After the calculation is over, this class displays the track IDs 
+	 * in front of all the Filaments that were tracked.
+	 * 
+	 * @param name
+	 * @param seedimg
+	 * @param IDALL
+	 */
 	public static void displayseeds(String name, IntervalView<FloatType> seedimg,
 			ArrayList<Pair<Integer, double[]>> IDALL) {
 
